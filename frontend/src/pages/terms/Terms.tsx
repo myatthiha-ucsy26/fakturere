@@ -5,8 +5,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { terms } from "../../constants/terms";
-import '../css/Terms.css';
 import xss from "xss";
+import '../css/Terms.css';
 
 const Terms: React.FC = () => {
   const isPC = useMediaQuery("(min-width: 1024px)");

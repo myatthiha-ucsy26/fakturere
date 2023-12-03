@@ -12,8 +12,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import '../css/PriceList.css';
 import { getProducts } from '../../services/apiService';
+import '../css/PriceList.css';
 
 const PriceList: React.FC = () => {
   const isDesktop = useMediaQuery('(min-width: 1260px)');

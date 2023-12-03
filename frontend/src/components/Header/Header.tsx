@@ -38,6 +38,7 @@ import {
 } from "@mui/icons-material";
 import { user } from "../../constants/user";
 import "../css/Header.css";
+
 interface HeaderProps {
   isAuth: boolean;
   window?: () => Window;

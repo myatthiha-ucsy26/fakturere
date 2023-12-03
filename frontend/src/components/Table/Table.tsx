@@ -16,13 +16,21 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import CloseIcon from '@mui/icons-material/Close';
 import ClickAwayListener from "@mui/material/ClickAwayListener";
-import Product from "../../interfaces/Product";
 import "../css/Table.css";
+
+interface Product {
+  article: number;
+  product: string;
+  inprice: number;
+  price: number;
+  unit: string;
+  stock: number;
+  description: string;
+}
 
 interface TableProps {
   products: Product[]; // Make sure the type matches the expected Product type
 }
-
 
 const headCells = [
   { id: "article", label: "Article No." },
