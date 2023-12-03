@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = 'https://invoice-8ywz.onrender.com/api';
 
 export const getProducts = async () => {
   try {
