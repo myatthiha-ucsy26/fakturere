@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%%g5(m*5bd98h-7_8t8yrjyrwi(!nl^%@$4!_u@7pb&m(qfz(x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['invoice-8ywz.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
