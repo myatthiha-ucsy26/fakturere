@@ -189,7 +189,7 @@ const PriceTable:React.FC<TableProps> = ({ products }) => {
                 }}
               >
                 <Tooltip title={product.inprice.toString()}>
-                  <Typography>{product?.inprice}</Typography>
+                  <span>{product?.inprice}</span>
                 </Tooltip>
               </TableCell>
               <TableCell
