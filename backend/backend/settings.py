@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['invoice-8ywz.onrender.com']
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
-    'https://invoice-8ywz.onrender.com'
+    'https://main.d3jk8tpoqi1it9.amplifyapp.com'
 ]
 # Application definition
 
