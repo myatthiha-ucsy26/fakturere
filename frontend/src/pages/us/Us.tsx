@@ -8,7 +8,7 @@ import xss from "xss";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import '../css/us.css';
+import '../css/Us.css';
 
 const Us: React.FC = () => {
   const isPC = useMediaQuery("(min-width: 1024px)");
