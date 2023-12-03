@@ -188,7 +188,6 @@ const Header: React.FC<HeaderProps> = ({ isAuth, window }) => {
             <Button
               onClick={handleOpenLanguageMenu}
               style={{
-                my: 2,
                 color: "white",
                 textTransform: "none",
                 marginRight: 1,
@@ -279,8 +278,8 @@ const Header: React.FC<HeaderProps> = ({ isAuth, window }) => {
               boxSizing: "border-box",
               width: drawerWidth,
             },
-            "& .MuiBackdrop-root": { invisible: true },
           }}
+          BackdropProps={{ invisible: true }}
         >
           {drawer}
         </Drawer>
@@ -404,7 +403,6 @@ const Header: React.FC<HeaderProps> = ({ isAuth, window }) => {
               key={page}
               onClick={handleCloseNavMenu}
               sx={{
-                my: 2,
                 color: "white",
                 display: "block",
                 textTransform: "none",
@@ -426,7 +424,6 @@ const Header: React.FC<HeaderProps> = ({ isAuth, window }) => {
             <Button
               onClick={handleOpenLanguageMenu}
               style={{
-                my: 2,
                 color: "white",
                 textTransform: "none",
                 marginRight: 1,

@@ -1,4 +1,10 @@
-export const terms =
+interface Terms {
+    close: string;
+    terms: string;
+    [key: string]: string;
+  }
+
+export const terms: Terms =
     {
         "close": "Close and Go Back",
         "terms": "Terms",

@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Tooltip from "@mui/material/Tooltip";
-import { Typography, useMediaQuery } from "@mui/material";
+import { IconButton, Typography, useMediaQuery } from "@mui/material";
 import Popover from "@mui/material/Popover";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
@@ -19,9 +19,10 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Product from "../../interfaces/Product";
 import "../css/Table.css";
 
-interface ProductComponentProps {
-  products: Product;
+interface TableProps {
+  products: Product[]; // Make sure the type matches the expected Product type
 }
+
 
 const headCells = [
   { id: "article", label: "Article No." },
@@ -33,9 +34,10 @@ const headCells = [
   { id: "description", label: "Description" },
 ];
 
-const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
-  const [orderBy, setOrderBy] = useState("article");
-  const [order, setOrder] = useState("asc");
+const PriceTable:React.FC<TableProps> = ({ products }) => {
+  const [orderBy, setOrderBy] = useState<string>("article");
+  const [order, setOrder] = useState<"asc" | "desc" | undefined>(undefined);
+
 
   const handleSort = (property: string) => {
     const isAsc = orderBy === property && order === "asc";
@@ -70,15 +72,19 @@ const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
     handleMenuClose();
   };
 
-  const sortedProducts = products.sort((a, b) => {
-    const aValue = a[orderBy];
-    const bValue = b[orderBy];
-    if (order === "asc") {
-      return aValue > bValue ? 1 : -1;
-    } else {
-      return aValue < bValue ? 1 : -1;
-    }
-  });
+  const sortedProducts = Array.isArray(products)
+  ? [...products].sort((a, b) => {
+      const aValue = a[orderBy as keyof Product];
+      const bValue = b[orderBy as keyof Product];
+
+      if (order === "asc") {
+        return aValue > bValue ? 1 : -1;
+      } else {
+        return aValue < bValue ? 1 : -1;
+      }
+    })
+  : undefined;
+
 
   const isDesktop = useMediaQuery("(min-width: 1260px)");
   const isTablet = useMediaQuery("(min-width: 960px) and (max-width: 1259px)");
@@ -138,7 +144,7 @@ const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {sortedProducts.map((product: Product, index: number) => (
+          {sortedProducts?.map((product: Product, index: number) => (
             <TableRow key={`${product.article}_${index}`} sx={{ height: "10px !important" }}>
               <TableCell
                 style={{
@@ -150,7 +156,7 @@ const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
                 }}
               >
                 <Tooltip title={product.article.toString()}>
-                  <Typography variant="span">{product.article}</Typography>
+                  <span>{product.article}</span>
                 </Tooltip>
               </TableCell>
               <TableCell
@@ -162,7 +168,7 @@ const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
                 }}
               >
                 <Tooltip title={product.product}>
-                  <Typography variant="span">{product.product}</Typography>
+                  <span>{product?.product}</span>
                 </Tooltip>
               </TableCell>
               <TableCell
@@ -175,7 +181,7 @@ const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
                 }}
               >
                 <Tooltip title={product.inprice.toString()}>
-                  <Typography variant="span">{product.inprice}</Typography>
+                  <Typography>{product?.inprice}</Typography>
                 </Tooltip>
               </TableCell>
               <TableCell
@@ -187,7 +193,7 @@ const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
                 }}
               >
                 <Tooltip title={product.price.toString()}>
-                  <Typography variant="span">{product.price}</Typography>
+                  <span>{product?.price}</span>
                 </Tooltip>
               </TableCell>
               <TableCell
@@ -200,7 +206,7 @@ const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
                 }}
               >
                 <Tooltip title={product.unit}>
-                  <Typography variant="span">{product.unit}</Typography>
+                  <span>{product?.unit}</span>
                 </Tooltip>
               </TableCell>
               <TableCell
@@ -213,7 +219,7 @@ const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
                 }}
               >
                 <Tooltip title={product.stock.toString()}>
-                  <Typography variant="span">{product.stock}</Typography>
+                  <span>{product?.stock}</span>
                 </Tooltip>
               </TableCell>
               <TableCell
@@ -226,7 +232,7 @@ const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
                 }}
               >
                 <Tooltip title={product.description}>
-                  <Typography variant="span">{product.description}</Typography>
+                  <span>{product?.description}</span>
                 </Tooltip>
               </TableCell>
               <TableCell
@@ -239,7 +245,9 @@ const PriceTable:React.FC<ProductComponentProps> = ({ products }) => {
                   display: isDesktop || isTablet ? "" : "flex",
                 }}
               >
-                <MoreHorizIcon onClick={handleMenuClick} />
+                <IconButton onClick={handleMenuClick} style={{padding: 0}}>
+                <MoreHorizIcon />
+                </IconButton>
                 <Popover
                   open={isMenuOpen}
                   anchorEl={anchorEl}
