@@ -49,20 +49,20 @@ const Us: React.FC = () => {
       <Paper
         elevation={0}
         sx={{ padding: 3, paddingBottom: "2.2rem" }}
-        className="back-terms"
+        className="back-us"
         style={{ width: isPC ? 750 : "100%" }}
       >
         <Box>
           <Typography
             variant="body1"
-            className="terms"
+            className="us"
             dangerouslySetInnerHTML={renderHtmlSafely(us?.us_text_1 || "")}
           />
 
-          <Typography variant="body1" className="mt-6 terms">
+          <Typography variant="body1" className="mt-6 us">
             {us?.us_text_2}
           </Typography>
-          <Typography variant="body1" className="mb-6 terms">
+          <Typography variant="body1" className="mb-6 us">
             {us?.us_text_3}
           </Typography>
         </Box>
