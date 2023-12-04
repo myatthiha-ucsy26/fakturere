@@ -16,12 +16,12 @@ const Layout: React.FC<LayoutProps> = ({ children, isAuth }) => {
      
     >
         {isAuth ? (
-        <Container sx={{ padding: isPaddingNeed ? '96px 0 0 170px !important' : isPC ? '96px 0 0 120px !important' :  '0px', paddingTop: 12}}>
+        <Container sx={{ margin: 0, padding: isPaddingNeed ? '96px 0 0 200px !important' : isPC ? '96px 0 0 200px !important' :  '0px', paddingTop: 12}}>
           <Box sx={{ display: "flex", width: '100%' }}>
           <Header isAuth={isAuth} />
             <Box
               component="main"
-              sx={{ flexGrow: 1, p: 3, width: isPC ? "calc(100% - 200px)" : '100%'}}
+              sx={{ flexGrow: 1, p: 3, width: isPC ? "calc(100% - 200px)" : '100%', paddingRight: isPC ? 0 : ''}}
             >
               {children}
             </Box>
