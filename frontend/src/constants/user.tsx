@@ -18,7 +18,6 @@ export const user = {
       "account_type": "free",
     },
     "price_list_mode": "ordinary",
-    "profile_pic": "https://storage.123fakturere.no/public/icons/diamond.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=APPTESTING%2F20231126%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231126T211819Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=79feb04c57f8cefdcfffcc72d37fc5931cd2ae91f80a95f12684fbe9f0ef2b54",
     "role": "owner",
     "show_warning": false,
     "stock_inventory": "payment_required",

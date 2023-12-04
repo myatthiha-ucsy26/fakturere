@@ -37,6 +37,7 @@ import {
   ExitToApp as ExitToAppIcon,
 } from "@mui/icons-material";
 import { user } from "../../constants/user";
+import userLogo from "../../assets/logo.png";
 import "../css/Header.css";
 
 interface HeaderProps {
@@ -168,7 +169,7 @@ const Header: React.FC<HeaderProps> = ({ isAuth, window }) => {
           >
             <IconButton sx={{ p: 0 }} component={Link} to="/dashboard">
               <img
-                src={user.profile_pic}
+                src={userLogo} // user.profile_pic will be use
                 alt="Profile"
                 className="user-profile"
               />
