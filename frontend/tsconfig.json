@@ -1,20 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es2018", // Target ECMAScript 2018, supported by Chrome 70
-    "lib": ["dom", "dom.iterable", "esnext"], // Add necessary libraries
-    "jsx": "react-jsx", // Use the appropriate JSX factory (for React 17+)
-    "module": "esnext", // Use ES modules
+    "target": "es2018",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "module": "esnext",
     "moduleResolution": "node",
-    "esModuleInterop": true, // Enable ES module interop
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true, // Do not emit output files
+    "noEmit": true,
     "skipLibCheck": true,
-    "strict": true, // Enable strict type-checking
-    "downlevelIteration": true, // Enable downlevel iteration for `for..of` loops
-    "allowJs": true, // Allow JavaScript files to be mixed with TypeScript files
-    "checkJs": true, // Enable type checking for JavaScript files
+    "strict": true,
+    "downlevelIteration": true,
+    "allowJs": true,
+    "checkJs": true,
     "allowImportingTsExtensions": true,
-    "baseUrl": ".", // Base directory to resolve non-relative module names
+    "baseUrl": ".",
     "paths": {
       "react": ["node_modules/react/index.d.ts"],
       "react-dom": ["node_modules/react-dom/index.d.ts"]

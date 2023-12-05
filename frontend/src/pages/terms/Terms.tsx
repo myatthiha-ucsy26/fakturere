@@ -1,23 +1,27 @@
-import React from 'react';
+import React from "react";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import useMediaQuery from '@mui/material/useMediaQuery';
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { terms } from "../../constants/terms";
 import xss from "xss";
-import '../css/Terms.css';
+import "../css/Terms.css";
+import { Link } from "react-router-dom";
 
 const Terms: React.FC = () => {
   const isPC = useMediaQuery("(min-width: 1024px)");
 
+  const termsText = terms?.terms_text_20 || "";
+
+  const splitText = termsText.split("/us");
   const renderHtmlSafely = (html: string) => {
     return { __html: xss(html) };
   };
 
   return (
-    <Box style={{position: 'relative', zIndex: '500px'}}>
-      <Box style={{ marginTop: '3rem' }}>
+    <Box style={{ position: "relative", zIndex: "500px" }}>
+      <Box style={{ marginTop: "3rem" }}>
         <Typography
           variant="h5"
           className="mt-6"
@@ -34,21 +38,31 @@ const Terms: React.FC = () => {
         >
           <Button
             sx={{
-              '&:hover': {
-                backgroundColor: '#089e1e',
+              "&:hover": {
+                backgroundColor: "#089e1e",
               },
-            }} variant="contained" className="back-btn">
+            }}
+            variant="contained"
+            className="back-btn"
+          >
             Close and Go Back
           </Button>
         </Box>
       </Box>
 
-      <Paper elevation={0} sx={{ padding: 3, paddingBottom: '2.2rem' }} className="back-terms" style={{ width: isPC ? 750 : '100%' }}>
+      <Paper
+        elevation={0}
+        sx={{ padding: 3, paddingBottom: "2.2rem" }}
+        className="back-terms"
+        style={{ width: isPC ? 750 : "100%" }}
+      >
         <Box>
           <Typography
             variant="body1"
             className="terms"
-            dangerouslySetInnerHTML={renderHtmlSafely(terms?.terms_text_1 || '')}
+            dangerouslySetInnerHTML={renderHtmlSafely(
+              terms?.terms_text_1 || ""
+            )}
           />
 
           {Array.from({ length: 2 }, (_, index) => (
@@ -71,7 +85,12 @@ const Terms: React.FC = () => {
           ))}
 
           <Typography variant="body1" className="terms">
-            {terms?.terms_text_20}
+            {splitText.map((part, index) => (
+              <React.Fragment key={index}>
+                {index > 0 && <Link to="/us">/us</Link>}
+                {part}
+              </React.Fragment>
+            ))}
           </Typography>
           <Typography variant="body1" className="terms">
             {terms?.terms_text_21}
@@ -98,10 +117,13 @@ const Terms: React.FC = () => {
       >
         <Button
           sx={{
-            '&:hover': {
-              backgroundColor: '#089e1e',
+            "&:hover": {
+              backgroundColor: "#089e1e",
             },
-          }} variant="contained" className="back-btn">
+          }}
+          variant="contained"
+          className="back-btn"
+        >
           Close and Go Back
         </Button>
       </Box>
