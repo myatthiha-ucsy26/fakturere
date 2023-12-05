@@ -22,6 +22,7 @@ const Terms: React.FC = () => {
 
   const handleCloseButtonClick = () => {
     // Add logic to handle the close button click
+    navigate(-1);
   };
 
   return (
