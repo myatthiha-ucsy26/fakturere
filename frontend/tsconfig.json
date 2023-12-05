@@ -13,6 +13,7 @@
     "downlevelIteration": true, // Enable downlevel iteration for `for..of` loops
     "allowJs": true, // Allow JavaScript files to be mixed with TypeScript files
     "checkJs": true, // Enable type checking for JavaScript files
+    "allowImportingTsExtensions": true,
     "baseUrl": ".", // Base directory to resolve non-relative module names
     "paths": {
       "react": ["node_modules/react/index.d.ts"],
