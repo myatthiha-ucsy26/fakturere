@@ -1,25 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "target": "es2018", // Target ECMAScript 2018, supported by Chrome 70
+    "lib": ["dom", "dom.iterable", "esnext"], // Add necessary libraries
+    "jsx": "react-jsx", // Use the appropriate JSX factory (for React 17+)
+    "module": "esnext", // Use ES modules
+    "moduleResolution": "node",
+    "esModuleInterop": true, // Enable ES module interop
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true, // Do not emit output files
     "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "strict": true, // Enable strict type-checking
+    "downlevelIteration": true, // Enable downlevel iteration for `for..of` loops
+    "allowJs": true, // Allow JavaScript files to be mixed with TypeScript files
+    "checkJs": true, // Enable type checking for JavaScript files
+    "baseUrl": ".", // Base directory to resolve non-relative module names
+    "paths": {
+      "react": ["node_modules/react/index.d.ts"],
+      "react-dom": ["node_modules/react-dom/index.d.ts"]
+    }
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.js"],
+  "exclude": ["node_modules"]
 }
