@@ -5,9 +5,9 @@ import legacy from '@vitejs/plugin-legacy';
 export default defineConfig({
   plugins: [
     legacy({
-      targets: ['chrome >= 64'], // expected compatible browser target range
-      renderLegacyChunks: true, // need to generate legacy browser compatible chunks (default true)
-      modernPolyfills: true, // no need to generate polyfills block for modern browsers (default false)
+      targets: ['chrome >= 64'],
+      renderLegacyChunks: true,
+      modernPolyfills: true,
     }),
   ],
 });
