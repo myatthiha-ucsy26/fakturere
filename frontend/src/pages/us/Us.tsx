@@ -6,10 +6,13 @@ import xss from "xss";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { useNavigate } from 'react-router-dom';
+
 import '../css/Us.css';
 
 const Us: React.FC = () => {
   const isPC = useMediaQuery("(min-width: 1024px)");
+  const navigate = useNavigate();
 
   const renderHtmlSafely = (html: string) => {
     return { __html: xss(html) };
@@ -17,6 +20,7 @@ const Us: React.FC = () => {
 
   const handleCloseButtonClick = () => {
     // Add logic to handle the close button click
+    navigate(-1);
   };
 
   return (

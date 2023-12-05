@@ -7,16 +7,22 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { terms } from "../../constants/terms";
 import xss from "xss";
 import "../css/Terms.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Terms: React.FC = () => {
   const isPC = useMediaQuery("(min-width: 1024px)");
+  const navigate = useNavigate();
 
   const termsText = terms?.terms_text_20 || "";
 
   const splitText = termsText.split("/us");
   const renderHtmlSafely = (html: string) => {
     return { __html: xss(html) };
+  };
+
+  const handleCloseButtonClick = () => {
+    // Add logic to handle the close button click
+    navigate(-1);
   };
 
   return (
@@ -44,6 +50,7 @@ const Terms: React.FC = () => {
             }}
             variant="contained"
             className="back-btn"
+            onClick={handleCloseButtonClick}
           >
             Close and Go Back
           </Button>
@@ -123,6 +130,7 @@ const Terms: React.FC = () => {
           }}
           variant="contained"
           className="back-btn"
+          onClick={handleCloseButtonClick}
         >
           Close and Go Back
         </Button>
