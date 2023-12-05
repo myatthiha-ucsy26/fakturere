@@ -1,4 +1,6 @@
+// react
 import { useState } from "react";
+// mui
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -16,6 +18,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import CloseIcon from '@mui/icons-material/Close';
 import ClickAwayListener from "@mui/material/ClickAwayListener";
+// css
 import "../css/Table.css";
 
 interface Product {

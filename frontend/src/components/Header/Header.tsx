@@ -1,4 +1,7 @@
+// react
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+// mui
 import {
   AppBar,
   Box,
@@ -11,17 +14,6 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import english from "../../assets/british.png";
-import logo from "../../assets/logo.png";
-import Drawer from "@mui/material/Drawer";
-import Divider from "@mui/material/Divider";
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import { Link } from "react-router-dom";
-import { sideMenu, pages, languages } from "../../constants/header";
 import {
   InsertDriveFile as InsertDriveFileIcon,
   Settings as SettingsIcon,
@@ -36,8 +28,20 @@ import {
   CloudUpload as CloudUploadIcon,
   ExitToApp as ExitToAppIcon,
 } from "@mui/icons-material";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Drawer from "@mui/material/Drawer";
+import Divider from "@mui/material/Divider";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+// assets
+import english from "../../assets/british.png";
+import logo from "../../assets/logo.png";
+// constants
+import { sideMenu, pages, languages } from "../../constants/header";
 import { user } from "../../constants/user";
-import userLogo from "../../assets/logo.png";
+//css
 import "../css/Header.css";
 
 interface HeaderProps {
@@ -169,7 +173,7 @@ const Header: React.FC<HeaderProps> = ({ isAuth, window }) => {
           >
             <IconButton sx={{ p: 0 }} component={Link} to="/dashboard">
               <img
-                src={userLogo} // user.profile_pic will be use
+                src={logo} // user.profile_pic will be use
                 alt="Profile"
                 className="user-profile"
               />

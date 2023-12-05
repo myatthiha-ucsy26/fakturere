@@ -1,7 +1,10 @@
+// react
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+// components
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 
+// lazy loading
 const Terms = lazy(() => import('../pages/terms/Terms'));
 const Us = lazy(() => import('../pages/us/Us'));
 const PriceList = lazy(() => import('../pages/pricelist/PriceList'));

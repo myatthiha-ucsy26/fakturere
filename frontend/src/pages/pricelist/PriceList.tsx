@@ -1,4 +1,6 @@
+// react
 import React, { useEffect, useState } from 'react';
+// mui
 import Box from '@mui/material/Box';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import Button from '@mui/material/Button';
@@ -12,7 +14,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
 import useMediaQuery from '@mui/material/useMediaQuery';
+// services
 import { getProducts } from '../../services/apiService';
+// css
 import '../css/PriceList.css';
 
 const PriceList: React.FC = () => {
@@ -82,9 +86,7 @@ const PriceList: React.FC = () => {
         <Dialog open={openDialog} onClose={handleCloseDialog}>
           <DialogTitle>Add New Product</DialogTitle>
           <DialogContent>
-            {/* Your form fields go here */}
             <TextField label="Product Name" fullWidth margin="normal" />
-            {/* Add more fields as needed */}
           </DialogContent>
           <DialogActions>
             <Button onClick={handleCloseDialog}>Cancel</Button>

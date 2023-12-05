@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// endpoint
 const API_BASE_URL = 'https://invoice-8ywz.onrender.com/api';
 
 export const getProducts = async () => {

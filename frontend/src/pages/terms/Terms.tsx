@@ -1,11 +1,15 @@
+// react
 import React from "react";
+// mui
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { terms } from "../../constants/terms";
 import xss from "xss";
+// constants
+import { terms } from "../../constants/terms";
+// css
 import "../css/Terms.css";
 import { Link, useNavigate } from "react-router-dom";
 
