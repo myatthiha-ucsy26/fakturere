@@ -339,6 +339,7 @@ const Header: React.FC<HeaderProps> = ({ isAuth, window }) => {
         >
           <img
             src={logo}
+            alt="logo"
             style={{
               display: isPC ? "flex" : "none",
               marginRight: 50,

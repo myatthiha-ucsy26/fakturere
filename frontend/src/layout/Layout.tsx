@@ -33,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children, isAuth }) => {
           <>
           <Container>
           <Header isAuth={isAuth} />
-          <img src={backgroundImage} className="site"/>
+          <img alt="site" src={backgroundImage} className="site"/>
 
             {children}
           </Container>
